@@ -37,6 +37,9 @@ class MyCanvasView(context: Context) : View(context) {
     private var motionTouchEventX = 0f
     private var motionTouchEventY = 0f
 
+    private var currentX = 0f
+    private var currentY = 0f
+
     override fun onSizeChanged(width: Int, height: Int, oldWidth: Int, oldHeight: Int) {
         super.onSizeChanged(width, height, oldWidth, oldHeight)
 
@@ -66,7 +69,10 @@ class MyCanvasView(context: Context) : View(context) {
     }
 
     private fun touchStart() {
-        TODO("Not yet implemented")
+        path.reset()
+        path.moveTo(motionTouchEventX, motionTouchEventY)
+        currentX = motionTouchEventX
+        currentY = motionTouchEventY
     }
 
     private fun touchMove() {
