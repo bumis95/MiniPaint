@@ -95,6 +95,7 @@ class MyCanvasView(context: Context) : View(context) {
     }
 
     private fun touchUp() {
-        TODO("Not yet implemented")
+        // Reset the path so it doesn't get drawn again.
+        path.reset()
     }
 }
